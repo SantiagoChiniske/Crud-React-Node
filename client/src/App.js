@@ -19,11 +19,17 @@ function App() {
       name: values.name,
       cost: values.cost,
       category: values.category
-    }).then((response)=>
-    console.log(response));
+    }).then(()=>{
+      setListGames([
+        ...listGames,
+        {
+          nome: values.name,
+          cost: values.cost,
+          category: values.category
+        },
+      ])
+    });
     
-
-
   };
 
     useEffect(()=>{
@@ -48,7 +54,7 @@ function App() {
         key={values.id} 
         listCard={listGames} 
         setListGames= {setListGames} 
-        id={values.id} 
+        id={values.idgames} 
         name = {values.nome} 
         cost= {values.cost} 
         category = {values.category}
